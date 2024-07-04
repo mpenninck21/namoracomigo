@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer namorar comigo?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #5F9EA0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #conteudo {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px; /* Largura máxima do cartão */
+            width: 80%; /* Largura ajustável */
+        }
+
+        h2 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #333333;
+            cursor: pointer;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            margin: 20px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.5);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+            background-color: #FF5E78;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conteudo">
+        <h2>Quer namorar comigo?</h2>
+        <div>
+            <button class="btn" onclick="sim()">SIM</button>
+            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)">NÃO</button>
+        </div>
+    </div>
+
+    <script>
+        function sim() {
+            alert("Pedido aceito, estamos namorando! :)");
+            location.href = "https://music.youtube.com/watch?v=izGwDsrQ1eQ";
+        }
+
+        function desvia(btn) {
+            btn.style.position = 'absolute';
+            btn.style.bottom = geraPosicao(10, 90);
+            btn.style.left = geraPosicao(10, 90);
+        }
+
+        function geraPosicao(min, max) {
+            return (Math.random() * (max - min) + min) + "%";
+        }
+    </script>
+</body>
+
+</html>
